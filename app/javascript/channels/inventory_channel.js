@@ -23,14 +23,8 @@ consumer.subscriptions.create('InventoryChannel', {
       const shoe_inventory = shoe_item.children[2];
       let prev_inventory = shoe_inventory.innerHTML;
 
-      console.log(
-        parseInt(prev_inventory),
-        prev_inventory,
-        data.shoe.inventory
-      );
       if (parseInt(prev_inventory) > 100) {
         if (data.shoe.inventory < 100) {
-          console.log('i am');
           document.getElementById(`high-shoe-${data.shoe.id}`).remove();
           shoe_item.children[2].innerHTML = data.shoe.inventory;
           document.getElementById('low-shoe-content').appendChild(shoe_item);
@@ -39,7 +33,6 @@ consumer.subscriptions.create('InventoryChannel', {
         }
       } else {
         if (data.shoe.inventory > 100) {
-          console.log('i am not');
           document.getElementById(`low-shoe-${data.shoe.id}`).remove();
           shoe_item.children[2].innerHTML = data.shoe.inventory;
           document.getElementById('high-shoe-content').appendChild(shoe_item);
