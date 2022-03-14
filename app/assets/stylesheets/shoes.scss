@@ -1,0 +1,49 @@
+// Place all the styles related to the Shoes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+* {
+  box-sizing: border-box;
+}
+body {
+  text-align: center;
+}
+table {
+  counter-reset: rowNumber;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table tr:not(:first-child) {
+  counter-increment: rowNumber;
+}
+
+table tr td:first-child::before {
+  content: counter(rowNumber);
+  min-width: 1em;
+  margin-right: 0.5em;
+}
+
+/* Create a two-column layout */
+.column {
+  float: left;
+  padding: 5px;
+  display: table;
+  padding: 20px;
+}
+.row {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex !important;
+  justify-content: center !important;
+  text-align: left;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: '';
+  clear: both;
+  display: table;
+}

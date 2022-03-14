@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Shoes</h1>
+<div class="row">
+<table>
+  <thead>
+    <tr>
+      <th>Store</th>
+      <th>Name</th>
+      <th>Inventory</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody id="shoe-content">
+    <% @shoes.each do |shoe| %>
+      <tr id="shoe-<%= shoe.id%>">
+        <td><%= shoe.store.name %></td>
+        <td><%= shoe.name %></td>
+        <td><%= shoe.inventory %></td>
+        <td><%= link_to 'Show', shoe %></td>
+        <td><%= link_to 'Edit', edit_shoe_path(shoe) %></td>
+        <td><%= link_to 'Destroy', shoe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+
+
+<br>
+
+<%= link_to 'New Shoe', new_shoe_path %>

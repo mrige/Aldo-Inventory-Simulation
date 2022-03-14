@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Shoe Inventory</h1>
+<div class ="container">
+<div class="row"> 
+<div class="column"> 
+
+<table>
+  <thead>
+    <tr>
+      <th>Store</th>
+      <th>Name</th>
+      <th>Inventory</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody id="low-shoe-content">
+    <% @low_shoe.each do |shoe| %>
+      <tr id="low-shoe-<%= shoe.id%>" <% if shoe.inventory >= 50 %> style="background: yellow"  <%else%> style="background: green" <%end%> >
+        <td><%= shoe.store.name %></td>
+        <td><%= shoe.name %></td>
+        <td><%= shoe.inventory %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<div class="column"> 
+
+<table>
+  <thead>
+    <tr>
+      <th>Store</th>
+      <th>Name</th>
+      <th>Inventory</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody id="high-shoe-content">
+    <% @high_shoe.each do |shoe| %>
+      <tr id="high-shoe-<%= shoe.id%>" style="background: red">
+       <td><%= shoe.store.name %></td>
+        <td><%= shoe.name %></td>
+        <td id= "inventory"><%= shoe.inventory %></td>
+        <% if (shoe.inventory >= 100)%>
+          <td><%= link_to 'Transfer', transfer_shoe_path(shoe), method: :put,  data: { confirm: 'Are you sure?' } %></td>
+        <% end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+
+<br>
+

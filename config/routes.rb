@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :stores
+  resources :shoes
+  resources :shoes do
+    member do
+        patch :transfer
+        put :transfer
+      end
+  end
+  root to: "shoes#inventory"
 end

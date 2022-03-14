@@ -1,24 +1,22 @@
-# README
+# Inventory Simulation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This projects connects to an external websocket that feeds us the an Aldo store shoe inventory. This project performs a simualtion of the movement of inventory.
 
-Things you may want to cover:
+in the `localhost:3000` (root route) we have 2 tables the one on the left shows the low and medium quantity and the right shows the high amount of when you can transfer 30% of the inventory to the store with the lowest inventory
 
-* Ruby version
+## Setup
 
-* System dependencies
+```
+rails db:migrate
+rails db:seed
+```
 
-* Configuration
+## Running
 
-* Database creation
+```
+1. start the websocket server
+2. cd inventory
+3. rails server
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- ...
