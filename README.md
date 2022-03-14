@@ -14,9 +14,8 @@ rails db:seed
 ## Running
 
 ```
-1. start the websocket server
-2. cd inventory
-3. rails server
+1. clone https://github.com/mathieugagne/shoe-store.git
+2. follow the instruction to run the websocket server
+3. cd "this project directory"
+4. rails server
 ```
-
-- ...
